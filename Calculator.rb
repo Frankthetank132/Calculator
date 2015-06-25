@@ -1,9 +1,11 @@
 #charles input control
 def take_input
+  choice = "y"
+until choice == "n" || choice == "N"
   puts "Please input a single-step math operation:"
   operation_input = gets.chomp
-  checker = 0 #declare checker variable
-until checker == 1 #loop till correct input is inputted
+  checker = 0 
+until checker == 1
   if operation_input.include? "*"
     storage = operation_input.split("*")
     num1 = storage.first.to_i
@@ -39,8 +41,15 @@ until checker == 1 #loop till correct input is inputted
     operation_input = gets.chomp
     checker=0
   end
-  end #end checker loop
-end 
+  end
+puts "Care to do again? [Y/N]" #asks about repeating program
+choice = gets.chomp.downcase 
+  unless (choice == "n") || (choice == "y") then
+    puts "ERROR: Invalid input. Try again: [Y/N]"
+    choice = gets.chomp.downcase
+  end #end unless loop
+end #end until loop
+end
 #end input control
 def mult(num1, num2)
   puts (num1 * num2)
