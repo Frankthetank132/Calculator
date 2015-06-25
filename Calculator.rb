@@ -2,10 +2,23 @@ $pi = Math::PI
 $e = Math::E 
 #input control
 def take_input
-  puts "V: 2.5.00 | Charlie Sheen // HELIum"
+  puts "V: 2.5.10 | Charlie Sheen // HELIum"
   choice = "y"
   puts "Degrees or Radians? [D/R]: " #asks degrees or radians for trig probs
   $theta = gets.chomp.downcase
+  if ($theta == "exit") || ($theta == "EXIT")
+    exit
+  end
+  if ($theta.downcase == "the best number ever")
+    puts "4761"
+    exit
+  end
+  if ($theta.downcase == "shia")
+    puts "JUST. DO IT."
+    sleep(1.8)
+    puts "WAKE UP, AND DO IT"
+    exit
+  end
   unless ($theta == "r") || ($theta == "d") then #error checking
     puts "ERROR: Invalid input. [D/R]: "
     $theta = gets.chomp.downcase
@@ -92,6 +105,8 @@ until checker == 1
     num1 = storage.to_f
     checker=1
     tan(num1)
+  elsif (operation_input == "EXIT") || (operation_input == "exit")
+    exit
   else #error protocol
     puts "ERROR: Invalid operation request. Enter again:"
     operation_input = gets.chomp
@@ -100,6 +115,9 @@ until checker == 1
   end
 puts "Care to do again? [Y/N]"
 choice = gets.chomp.downcase
+if choice.downcase == "exit"
+  exit
+end
   unless (choice == "n") || (choice == "y") then #error protocol
     puts "ERROR: Invalid input. Try again: [Y/N]"
     choice = gets.chomp.downcase
@@ -179,4 +197,4 @@ def tan(num1)
   end
 end
 take_input #calls the method
-#V: 2.5.00 | Charlie Sheen // HELIum
+#V: 2.5.10 | Charlie Sheen // HELIum
