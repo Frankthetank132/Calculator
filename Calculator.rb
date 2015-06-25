@@ -2,7 +2,7 @@ $pi = Math::PI
 $e = Math::E 
 #input control
 def take_input
-  puts "V: 2.7.00 | Charlie Sheen // HELIum"
+  puts "V: 2.7.10 | Charlie Sheen // HELIum"
   choice = "y"
   puts "Degrees or Radians? [D/R]: " #asks degrees or radians for trig probs
   $theta = gets.chomp.downcase
@@ -242,4 +242,4 @@ def cot(num1)
   end
 end
 take_input #calls the method
-#V: 2.7.00 | Charlie Sheen // HELIum
+#V: 2.7.10 | Charlie Sheen // HELIum
