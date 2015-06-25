@@ -58,12 +58,12 @@ until checker == 1
     num2 = storage.last.to_f
     checker=1
     add(num1,num2)
-  elsif (operation_input.include? "s") && ((operation_input.include? "root" ) == false) && ((operation_input.include? "in" ) == false)#square
+  elsif (operation_input.include? "s") && ((operation_input.include? "root" ) == false) && ((operation_input.include? "in" ) == false) && ((operation_input.include? "c" ) == false)#square
     storage = operation_input.gsub("s","")
     num1 = storage.to_f
     checker=1
     sqr(num1)
-  elsif (operation_input.include? "c") && ((operation_input.include? "root" ) == false) && ((operation_input.include? "os" ) == false)#cube
+  elsif (operation_input.include? "c") && ((operation_input.include? "root" ) == false) && ((operation_input.include? "os" ) == false) && ((operation_input.include? "s" ) == false) && ((operation_input.include? "ot" ) == false)#cube
     storage = operation_input.gsub("c","")
     num1 = storage.to_f
     checker=1
@@ -96,7 +96,7 @@ until checker == 1
     checker=1
     sin(num1)
   elsif operation_input.include? "cos" #cosine
-    storage = operation_input.gsub("sin","")
+    storage = operation_input.gsub("cos","")
     num1 = storage.to_f
     checker=1
     cos(num1)
@@ -105,6 +105,21 @@ until checker == 1
     num1 = storage.to_f
     checker=1
     tan(num1)
+  elsif operation_input.include? "csc" #cosecant
+    storage = operation_input.gsub("csc","")
+    num1 = storage.to_f
+    checker=1
+    csc(num1)
+  elsif operation_input.include? "sec" #cosine
+    storage = operation_input.gsub("sec","")
+    num1 = storage.to_f
+    checker=1
+    sec(num1)
+  elsif operation_input.include? "cot" #tangent
+    storage = operation_input.gsub("cot","")
+    num1 = storage.to_f
+    checker=1
+    cot(num1)
   elsif (operation_input == "EXIT") || (operation_input == "exit")
     exit
   else #error protocol
@@ -194,6 +209,36 @@ def tan(num1)
     num1 = num1 / 180
     num1 = num1 * ($pi)
     puts (Math.tan(num1).round(4))
+  end
+end
+
+def csc(num1)
+  if $theta == "r"
+    puts 1/(Math.sin(num1).round(4))
+  else
+    num1 = num1 / 180
+    num1 = num1 * ($pi)
+    puts 1/(Math.sin(num1).round(4))
+  end
+end
+
+def sec(num1)
+  if $theta == "r"
+    puts 1/(Math.cos(num1).round(4))
+  else
+    num1 = num1 / 180
+    num1 = num1 * ($pi)
+    puts 1/(Math.cos(num1).round(4))
+  end
+end
+
+def cot(num1)
+  if $theta == "r"
+    puts 1/(Math.tan(num1).round(4))
+  else
+    num1 = num1 / 180
+    num1 = num1 * ($pi)
+    puts 1/(Math.tan(num1).round(4))
   end
 end
 take_input #calls the method
