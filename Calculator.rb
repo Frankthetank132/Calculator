@@ -44,3 +44,7 @@ end
 def add(num1, num2)
   puts (num1 + num2)
 end
+
+def subt(num1, num2)
+  puts (num1 - num2)
+end
