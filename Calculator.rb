@@ -55,23 +55,23 @@ end
 end
 #end input control
 def mult(num1, num2)
-  puts (num1 * num2)
+  puts ((num1 * num2).round(2))
 end
 
 def div(num1, num2)
-  puts (num1 / num2)
+  puts ((num1 / num2).round(2))
 end
 
 def add(num1, num2)
-  puts (num1 + num2)
+  puts ((num1 + num2).round(2))
 end
 
 def subt(num1, num2)
-  puts (num1 - num2)
+  puts ((num1 - num2).round(2))
 end
 
 def square_root(num1)
-  puts (sqrt(num1))
+  puts ((sqrt(num1)).round(2))
 end
 
 
