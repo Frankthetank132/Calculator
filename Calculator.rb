@@ -57,3 +57,5 @@ end
 def subt(num1, num2)
   puts (num1 - num2)
 end
+
+take_input #calls the method
