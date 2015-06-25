@@ -1,3 +1,4 @@
+#charles input control
 def take_input
   puts "Please input a single-step math operation:"
   operation_input = gets.chomp
@@ -31,7 +32,7 @@ def take_input
     puts "ERROR: Invalid operation request."
   end
 end
-
+#end input control
 def mult(num1, num2)
   puts (num1 * num2)
 end
