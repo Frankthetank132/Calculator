@@ -1,5 +1,6 @@
 #charles input control
 def take_input
+  puts "V: 0.0.01 | Shia Labeouf // HYDROgen"
   choice = "y"
 until choice.downcase == "n"
   puts "Please input a single-step math operation:"
@@ -67,3 +68,5 @@ def subt(num1, num2)
   puts ((num1 - num2).round(2))
 end
 take_input #calls the method
+
+#"V: 0.0.01 | Shia Labeouf // HYDROgen"
