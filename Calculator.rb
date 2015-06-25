@@ -36,9 +36,6 @@ until checker == 1
     num2 = storage.last.to_f
     checker=1
     add(num1,num2)
-  elsif operation_input.include "sqrt"
-    num1 = operation_input.tr('sqrt', '')
-    square_root(num1.to_i)
   else
     puts "ERROR: Invalid operation request. Enter again:"
     operation_input = gets.chomp
@@ -69,10 +66,4 @@ end
 def subt(num1, num2)
   puts ((num1 - num2).round(2))
 end
-
-def square_root(num1)
-  puts ((sqrt(num1)).round(2))
-end
-
-
 take_input #calls the method
