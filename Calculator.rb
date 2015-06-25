@@ -1,7 +1,15 @@
+$pi = Math::PI 
+$e = Math::E 
 #input control
 def take_input
-  puts "V: 2.0.00 | Charlie Sheen // HELIum"
+  puts "V: 2.5.00 | Charlie Sheen // HELIum"
   choice = "y"
+  puts "Degrees or Radians? [D/R]: " #asks degrees or radians for trig probs
+  $theta = gets.chomp.downcase
+  unless ($theta == "r") || ($theta == "d") then #error checking
+    puts "ERROR: Invalid input. [D/R]: "
+    $theta = gets.chomp.downcase
+  end
 until choice.downcase == "n"
   puts "Please input a single-step math operation:"
   operation_input = gets.chomp
@@ -37,12 +45,12 @@ until checker == 1
     num2 = storage.last.to_f
     checker=1
     add(num1,num2)
-  elsif (operation_input.include? "s") && ((operation_input.include? "root" ) == false)#square
+  elsif (operation_input.include? "s") && ((operation_input.include? "root" ) == false) && ((operation_input.include? "in" ) == false)#square
     storage = operation_input.gsub("s","")
     num1 = storage.to_f
     checker=1
     sqr(num1)
-  elsif (operation_input.include? "c") && ((operation_input.include? "root" ) == false)#cube
+  elsif (operation_input.include? "c") && ((operation_input.include? "root" ) == false) && ((operation_input.include? "os" ) == false)#cube
     storage = operation_input.gsub("c","")
     num1 = storage.to_f
     checker=1
@@ -64,6 +72,26 @@ until checker == 1
     num1 = storage.last.to_f
     checker=1
     log(num1,base)
+  elsif operation_input.include? "ln" #natural log
+    storage = operation_input.gsub("ln","")
+    num1 = storage.to_f
+    checker=1
+    ln(num1)
+  elsif operation_input.include? "sin" #sine
+    storage = operation_input.gsub("sin","")
+    num1 = storage.to_f
+    checker=1
+    sin(num1)
+  elsif operation_input.include? "cos" #cosine
+    storage = operation_input.gsub("sin","")
+    num1 = storage.to_f
+    checker=1
+    cos(num1)
+  elsif operation_input.include? "tan" #tangent
+    storage = operation_input.gsub("tan","")
+    num1 = storage.to_f
+    checker=1
+    tan(num1)
   else #error protocol
     puts "ERROR: Invalid operation request. Enter again:"
     operation_input = gets.chomp
@@ -112,9 +140,43 @@ end
 def croot(num1)
   puts (Math.cbrt(num1).round(2))
 end
-def log(num1, base)
+
+def log(num1, base = 10)
   puts (Math.log(num1, base).round(2))
 end
-take_input #calls the method
 
-#V: 2.0.00 | Charlie Sheen // HELIum
+def ln(num1)
+  puts (Math.log(num1).round(4))
+end
+
+def sin(num1)
+  if $theta == "r"
+    puts (Math.sin(num1).round(4))
+  else
+    num1 = num1 / 180
+    num1 = num1 * ($pi)
+    puts (Math.sin(num1).round(4))
+  end
+end
+
+def cos(num1)
+  if $theta == "r"
+    puts (Math.cos(num1).round(4))
+  else
+    num1 = num1 / 180
+    num1 = num1 * ($pi)
+    puts (Math.cos(num1).round(4))
+  end
+end
+
+def tan(num1)
+  if $theta == "r"
+    puts (Math.tan(num1).round(4))
+  else
+    num1 = num1 / 180
+    num1 = num1 * ($pi)
+    puts (Math.tan(num1).round(4))
+  end
+end
+take_input #calls the method
+#V: 2.5.00 | Charlie Sheen // HELIum
