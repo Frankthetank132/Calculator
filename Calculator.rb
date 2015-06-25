@@ -67,4 +67,9 @@ def subt(num1, num2)
   puts (num1 - num2)
 end
 
+def square_root(num1)
+  puts (sqrt(num1))
+end
+
+
 take_input #calls the method
