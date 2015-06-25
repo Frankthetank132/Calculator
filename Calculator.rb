@@ -36,3 +36,10 @@ def mult(num1, num2)
   puts (num1 * num2)
 end
 
+def add(num1, num2)
+  puts (num1 + num2)
+end
+
+def div(num1, num2)
+  puts (num1 / num2)
+end
