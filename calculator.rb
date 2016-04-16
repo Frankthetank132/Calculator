@@ -1,15 +1,15 @@
 $pi = Math::PI 
-$e = Math::E 
+$e = Math::E
 #input control
 def take_input
   puts "V: 2.7.10 | Charlie Sheen // HELIum"
   choice = "y"
   puts "Degrees or Radians? [D/R]: " #asks degrees or radians for trig probs
   $theta = gets.chomp.downcase
-  if ($theta == "exit") || ($theta == "EXIT")
+  if $theta == "exit"
     exit
   end
-  if ($theta.downcase == "the best number ever")
+  if ($theta == "the best number ever")
     puts "4761"
     exit
   end
@@ -23,7 +23,7 @@ def take_input
     puts "ERROR: Invalid input. [D/R]: "
     $theta = gets.chomp.downcase
   end
-until choice.downcase == "n"
+until choice == "n"
   puts "Please input a single-step math operation:"
   operation_input = gets.chomp
   checker = 0 
@@ -120,7 +120,7 @@ until checker == 1
     num1 = storage.to_f
     checker=1
     cot(num1)
-  elsif (operation_input == "EXIT") || (operation_input == "exit")
+  elsif operation_input.downcase == "exit"
     exit
   else #error protocol
     puts "ERROR: Invalid operation request. Enter again:"
@@ -130,10 +130,10 @@ until checker == 1
   end
 puts "Care to do again? [Y/N]"
 choice = gets.chomp.downcase
-if choice.downcase == "exit"
+if choice == "exit"
   exit
 end
-  unless (choice == "n") || (choice == "y") then #error protocol
+  unless choice == "n" || choice == "y" then #error protocol
     puts "ERROR: Invalid input. Try again: [Y/N]"
     choice = gets.chomp.downcase
   end
